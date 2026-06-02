@@ -136,8 +136,8 @@ jobs:
           file: docker/Dockerfile.api
           push: true
           tags: |
-            ghcr.io/ntokyb/maemo-compliance-api:latest
-            ghcr.io/ntokyb/maemo-compliance-api:${{ github.sha }}
+            ghcr.io/codist-pty-ltd/maemo-compliance-api:latest
+            ghcr.io/codist-pty-ltd/maemo-compliance-api:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -148,8 +148,8 @@ jobs:
           file: docker/Dockerfile.portal
           push: true
           tags: |
-            ghcr.io/ntokyb/maemo-compliance-portal:latest
-            ghcr.io/ntokyb/maemo-compliance-portal:${{ github.sha }}
+            ghcr.io/codist-pty-ltd/maemo-compliance-portal:latest
+            ghcr.io/codist-pty-ltd/maemo-compliance-portal:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -160,8 +160,8 @@ jobs:
           file: docker/Dockerfile.workers
           push: true
           tags: |
-            ghcr.io/ntokyb/maemo-compliance-workers:latest
-            ghcr.io/ntokyb/maemo-compliance-workers:${{ github.sha }}
+            ghcr.io/codist-pty-ltd/maemo-compliance-workers:latest
+            ghcr.io/codist-pty-ltd/maemo-compliance-workers:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

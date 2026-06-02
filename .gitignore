@@ -1,5 +1,8 @@
 # Local secrets
 .env
+*.pem
+private.pem
+public.pem
 
 # Build outputs
 **/bin/
