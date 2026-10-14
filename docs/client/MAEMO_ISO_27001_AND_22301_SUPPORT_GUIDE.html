@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Maemo ISO 27001 and 22301 Support Guide</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Maemo ISO 27001 and 22301 Support Guide</h1>
+</header>
+<h1 id="maemo-compliance-iso-27001-iso-22301-support-guide">Maemo
+Compliance — ISO 27001 &amp; ISO 22301 Support Guide</h1>
+<p><strong>Document title:</strong> How Maemo Compliance Supports
+ISO/IEC 27001 and ISO 22301<br />
+<strong>Product:</strong> Maemo Compliance<br />
+<strong>Publisher:</strong> Codist (Pty) Ltd<br />
+<strong>Version:</strong> 1.0<br />
+<strong>Date:</strong> July 2026<br />
+<strong>Classification:</strong> Client-facing — for evaluation,
+implementation planning, and audit preparation<br />
+<strong>Companion document:</strong> Maemo Product Specification
+v1.0</p>
+<hr />
+<h2 id="document-control">Document control</h2>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 14%" />
+<col style="width: 19%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Summary of changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>July 2026</td>
+<td>Codist Product Team</td>
+<td>Initial ISO 27001 and ISO 22301 support guide</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="purpose-of-this-document">1. Purpose of this document</h2>
+<p>This guide explains <strong>how Maemo Compliance helps organisations
+implement, operate, and demonstrate</strong> requirements arising
+from:</p>
+<ul>
+<li><strong>ISO/IEC 27001:2022</strong> — Information Security
+Management Systems (ISMS)<br />
+</li>
+<li><strong>ISO 22301:2019</strong> — Business Continuity Management
+Systems (BCMS)</li>
+</ul>
+<p>It is written for:</p>
+<ul>
+<li>Information security managers and BCMS coordinators evaluating
+software<br />
+</li>
+<li>Compliance consultants scoping an ISMS/BCMS implementation<br />
+</li>
+<li>Internal auditors preparing for certification or surveillance
+audits<br />
+</li>
+<li>Procurement teams assessing fit against stated requirements</li>
+</ul>
+<h3 id="important-disclaimer">Important disclaimer</h3>
+<p><strong>Maemo Compliance is software that supports management system
+processes. It does not, by itself, confer ISO 27001 or ISO 22301
+certification.</strong></p>
+<p>Certification requires:</p>
+<ul>
+<li>Organisational leadership, policy, and resources<br />
+</li>
+<li>Competent people and defined processes beyond software<br />
+</li>
+<li>Technical and physical controls implemented in your
+environment<br />
+</li>
+<li>Internal audits and management review conducted by your
+organisation<br />
+</li>
+<li>An accredited certification body conducting an independent
+audit</li>
+</ul>
+<p>This document uses the terms <strong>Supported</strong>,
+<strong>Partially supported</strong>, and <strong>Not supported</strong>
+to describe how Maemo features map to standard requirements.
+<strong>Partially supported</strong> means Maemo provides tooling that
+assists the process, but the organisation must define content, operate
+adjacent controls, or use complementary systems.</p>
+<hr />
+<h2 id="executive-summary">2. Executive summary</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 50%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Overall Maemo fit</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ISO 27001:2022</strong></td>
+<td><strong>Strong operational support</strong></td>
+<td>Maemo directly supports ISMS documentation, risk treatment records,
+CAPA, internal audit, and POPIA-aligned privacy operations — core PDCA
+cycle activities. Annex A control operation relies on your technical
+stack; Maemo records and evidences management-system responses.</td>
+</tr>
+<tr>
+<td><strong>ISO 22301:2019</strong></td>
+<td><strong>Partial — process support</strong></td>
+<td>Maemo supports BCMS <strong>documentation, risk register, corrective
+action after disruptions/exercises, and audit</strong> through existing
+modules. Dedicated BCM features (BIA tool, RTO/RPO registers, exercise
+scheduler, crisis comms) are <strong>not yet built in</strong>.
+Organisations can run a BCMS on Maemo today using document and NCR
+workflows; a dedicated ISO 22301 module is planned.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-deployment-patterns">Recommended deployment
+patterns</h3>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ISMS on Maemo</strong></td>
+<td>SME to mid-market organisations certifying or maintaining ISO 27001;
+POPIA co-compliance required</td>
+</tr>
+<tr>
+<td><strong>BCMS on Maemo (interim)</strong></td>
+<td>Organisations building ISO 22301 using Maemo for policies, plans,
+risks, and CAPA while BIA/exercise tracking uses spreadsheets or a
+future Maemo release</td>
+</tr>
+<tr>
+<td><strong>ISMS + BCMS combined</strong></td>
+<td>Single tenant with ISO 27001 and ISO 22301 selected; integrated
+SHEQ/audit template; shared risk register with Information Security and
+Operational categories</td>
+</tr>
+<tr>
+<td><strong>Maemo + specialist tools</strong></td>
+<td>Large enterprises needing dedicated BCM software (BIA, crisis
+management) alongside Maemo for document control and audit evidence</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="isoiec-270012022-how-maemo-helps">3. ISO/IEC 27001:2022 — How
+Maemo helps</h2>
+<h3 id="what-iso-27001-requires-brief">3.1 What ISO 27001 requires
+(brief)</h3>
+<p>ISO 27001 specifies requirements for establishing, implementing,
+maintaining, and continually improving an ISMS. The structure follows
+<strong>Plan-Do-Check-Act (PDCA)</strong>:</p>
+<table>
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr>
+<th>Clause</th>
+<th>Theme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>Context of the organisation</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Leadership</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Planning (risks, opportunities, objectives)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Support (resources, competence, documented information)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Operation (risk assessment, treatment, operational planning)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Performance evaluation (monitoring, internal audit, management
+review)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Improvement (nonconformity, corrective action)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Annex A</strong> lists 93 information security controls in
+four themes (Organisational, People, Physical, Technological). Maemo
+does not auto-implement technical controls (firewalls, encryption, IAM)
+— it helps you <strong>govern, document, assess, audit, and
+improve</strong> them.</p>
+<h3 id="maemo-onboarding-for-iso-27001">3.2 Maemo onboarding for ISO
+27001</h3>
+<p>When <strong>ISO 27001</strong> is selected during signup or company
+setup, Maemo automatically:</p>
+<ol type="1">
+<li>Adds document categories: <strong>Information Security
+Policy</strong>, <strong>Information Security Procedure</strong>,
+<strong>Information Security Record</strong><br />
+</li>
+<li>Seeds an <strong>ISO 27001:2022 ISMS Audit</strong> template with
+clause-themed questions (Context, Leadership, Planning, Support,
+Operation, Performance, Improvement)<br />
+</li>
+<li>Enables <strong>Information Security</strong> as a risk category in
+the risk register<br />
+</li>
+<li>Includes ISO 27001 in tenant <code>TargetStandardsJson</code> for
+reporting and configuration context</li>
+</ol>
+<p>If ISO 27001 is selected together with other standards, an
+<strong>Integrated SHEQ Management System Audit</strong> template is
+also seeded, covering documentation, training, compliance, safety,
+environmental, incident management, and risk management themes.</p>
+<h3 id="clause-by-clause-support-matrix-iso-270012022">3.3
+Clause-by-clause support matrix (ISO 27001:2022)</h3>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 34%" />
+<col style="width: 23%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th>Clause</th>
+<th>Requirement (summary)</th>
+<th>Maemo support</th>
+<th>Modules / features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>4.1</strong></td>
+<td>Understand organisation and context</td>
+<td><strong>Partially supported</strong></td>
+<td>Store context analysis as controlled documents; no dedicated context
+register</td>
+</tr>
+<tr>
+<td><strong>4.2</strong></td>
+<td>Interested parties</td>
+<td><strong>Partially supported</strong></td>
+<td>Document stakeholder analysis in ISMS documentation</td>
+</tr>
+<tr>
+<td><strong>4.3</strong></td>
+<td>ISMS scope</td>
+<td><strong>Supported</strong></td>
+<td>Scope statement as approved controlled document with version
+history</td>
+</tr>
+<tr>
+<td><strong>4.4</strong></td>
+<td>ISMS</td>
+<td><strong>Partially supported</strong></td>
+<td>Platform hosts ISMS records; ISMS design is organisational</td>
+</tr>
+<tr>
+<td><strong>5.1</strong></td>
+<td>Leadership commitment</td>
+<td><strong>Partially supported</strong></td>
+<td>Policy documents with approval workflow evidence</td>
+</tr>
+<tr>
+<td><strong>5.2</strong></td>
+<td>Policy</td>
+<td><strong>Supported</strong></td>
+<td>Information Security Policy category; approval workflow; review
+dates</td>
+</tr>
+<tr>
+<td><strong>5.3</strong></td>
+<td>Roles and responsibilities</td>
+<td><strong>Partially supported</strong></td>
+<td>Document owners, approvers, NCR owners, risk owners; tenant roles
+(Admin, User, Consultant)</td>
+</tr>
+<tr>
+<td><strong>6.1</strong></td>
+<td>Actions to address risks and opportunities</td>
+<td><strong>Supported</strong></td>
+<td>Risk register with inherent/residual scoring; Information Security
+category</td>
+</tr>
+<tr>
+<td><strong>6.1.2</strong></td>
+<td>Information security risk assessment</td>
+<td><strong>Supported</strong></td>
+<td>Risk register; link risks to NCRs; review dates</td>
+</tr>
+<tr>
+<td><strong>6.1.3</strong></td>
+<td>Risk treatment</td>
+<td><strong>Partially supported</strong></td>
+<td>Existing controls (text), corrective actions via NCR; no SOA
+(Statement of Applicability) builder</td>
+</tr>
+<tr>
+<td><strong>6.2</strong></td>
+<td>Security objectives</td>
+<td><strong>Partially supported</strong></td>
+<td>Objectives documented and tracked as controlled documents; no
+dedicated objectives KPI module</td>
+</tr>
+<tr>
+<td><strong>6.3</strong></td>
+<td>Planning of changes</td>
+<td><strong>Partially supported</strong></td>
+<td>Change-controlled documents via approval workflow</td>
+</tr>
+<tr>
+<td><strong>7.1</strong></td>
+<td>Resources</td>
+<td><strong>Not supported</strong></td>
+<td>HR/finance systems</td>
+</tr>
+<tr>
+<td><strong>7.2</strong></td>
+<td>Competence</td>
+<td><strong>Partially supported</strong></td>
+<td>Training &amp; competence procedure template (ISO 9001 pack,
+adaptable for ISMS)</td>
+</tr>
+<tr>
+<td><strong>7.3</strong></td>
+<td>Awareness</td>
+<td><strong>Partially supported</strong></td>
+<td>Distribute approved policies via document module; evidence of
+acknowledgement via records</td>
+</tr>
+<tr>
+<td><strong>7.4</strong></td>
+<td>Communication</td>
+<td><strong>Partially supported</strong></td>
+<td>Email notifications; no mass communication/campaign module</td>
+</tr>
+<tr>
+<td><strong>7.5</strong></td>
+<td>Documented information</td>
+<td><strong>Supported</strong></td>
+<td>Full document control: create, review, approve, version, archive,
+integrity hash</td>
+</tr>
+<tr>
+<td><strong>8.1</strong></td>
+<td>Operational planning and control</td>
+<td><strong>Partially supported</strong></td>
+<td>Procedures as controlled documents; operational records uploaded and
+classified</td>
+</tr>
+<tr>
+<td><strong>8.2</strong></td>
+<td>Risk assessment</td>
+<td><strong>Supported</strong></td>
+<td>Risk register — identify, analyse, evaluate (5×5 scoring)</td>
+</tr>
+<tr>
+<td><strong>8.3</strong></td>
+<td>Risk treatment</td>
+<td><strong>Supported</strong></td>
+<td>Mitigation via documented controls; CAPA via NCR; risk status
+lifecycle</td>
+</tr>
+<tr>
+<td><strong>9.1</strong></td>
+<td>Monitoring and measurement</td>
+<td><strong>Partially supported</strong></td>
+<td>Dashboard summary; review dates; no KRI/KPI engine</td>
+</tr>
+<tr>
+<td><strong>9.2</strong></td>
+<td>Internal audit</td>
+<td><strong>Supported</strong></td>
+<td>Audit templates, runs, evidence, findings, NCR from findings</td>
+</tr>
+<tr>
+<td><strong>9.3</strong></td>
+<td>Management review</td>
+<td><strong>Partially supported</strong></td>
+<td>Management review procedure template; inputs/outputs stored as
+documents and records</td>
+</tr>
+<tr>
+<td><strong>10.1</strong></td>
+<td>Nonconformity and corrective action</td>
+<td><strong>Supported</strong></td>
+<td>NCR module with root cause, corrective action, effectiveness
+verification</td>
+</tr>
+<tr>
+<td><strong>10.2</strong></td>
+<td>Continual improvement</td>
+<td><strong>Supported</strong></td>
+<td>NCR closure loop; document revision cycle; audit finding
+remediation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="annex-a-control-themes-practical-maemo-mapping">3.4 Annex A
+control themes — practical Maemo mapping</h3>
+<p>Annex A contains 93 controls. Maemo does not provide one checkbox per
+control. Instead, the table below groups controls by theme and explains
+how Maemo typically supports <strong>management system evidence</strong>
+for each group.</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 20%" />
+<col style="width: 24%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Annex A theme</th>
+<th>Examples</th>
+<th>Maemo role</th>
+<th>Typical gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Organisational (37 controls)</strong></td>
+<td>Policies, roles, asset inventory, supplier relationships, incident
+management</td>
+<td><strong>Policies/procedures</strong> in Documents;
+<strong>incidents</strong> as NCRs; <strong>supplier</strong> docs as
+controlled records; <strong>audit</strong> evidence</td>
+<td>Asset inventory CMDB, automated supplier risk scoring, SOA
+matrix</td>
+</tr>
+<tr>
+<td><strong>People (8 controls)</strong></td>
+<td>Screening, terms of employment, awareness training</td>
+<td><strong>Training procedure</strong> template; training
+<strong>records</strong> as documents</td>
+<td>HR integration, automated training LMS</td>
+</tr>
+<tr>
+<td><strong>Physical (14 controls)</strong></td>
+<td>Secure areas, equipment, clear desk</td>
+<td><strong>Procedures</strong> documented; <strong>audit</strong>
+verifies compliance</td>
+<td>Physical access systems, CCTV — outside Maemo</td>
+</tr>
+<tr>
+<td><strong>Technological (34 controls)</strong></td>
+<td>Access control, cryptography, logging, secure development</td>
+<td><strong>Policies</strong> and <strong>risk register</strong>
+(Information Security); <strong>NCR</strong> for control failures;
+<strong>POPIA trail</strong> for data access</td>
+<td>IAM, SIEM, vulnerability scanners — implemented in IT stack,
+evidenced in Maemo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="popia-synergy-south-african-organisations">3.5 POPIA synergy
+(South African organisations)</h3>
+<p>Organisations implementing ISO 27001 in South Africa typically align
+with <strong>POPIA</strong>. Maemo provides:</p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr>
+<th>POPIA need</th>
+<th>Maemo feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identify records containing personal information</td>
+<td>PII classification fields on documents</td>
+</tr>
+<tr>
+<td>Retention limitation</td>
+<td>PII retention period (months); records retention scheduling</td>
+</tr>
+<tr>
+<td>Security safeguards (administrative)</td>
+<td>Document access control via authenticated portal; audit logging</td>
+</tr>
+<tr>
+<td>Accountability — demonstrate access</td>
+<td><strong>POPIA access trail report</strong> (admin) with CSV
+export</td>
+</tr>
+<tr>
+<td>Data breach response documentation</td>
+<td>POPIA data breach notification template</td>
+</tr>
+</tbody>
+</table>
+<p>This combination supports <strong>ISO 27001 Clause 7.5</strong>
+(documented information) and <strong>Annex A 5.24–5.28</strong>
+(incident and privacy-related planning) from a <strong>records and
+process</strong> perspective.</p>
+<h3 id="typical-iso-27001-artefacts-managed-in-maemo">3.6 Typical ISO
+27001 artefacts managed in Maemo</h3>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 45%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artefact</th>
+<th>Maemo module</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Information Security Policy</td>
+<td>Documents</td>
+<td>Approved, versioned, review-dated</td>
+</tr>
+<tr>
+<td>ISMS scope statement</td>
+<td>Documents</td>
+<td>Active controlled document</td>
+</tr>
+<tr>
+<td>Risk assessment methodology</td>
+<td>Documents</td>
+<td>Procedure category</td>
+</tr>
+<tr>
+<td>Risk register</td>
+<td>Risks</td>
+<td>Information Security category; inherent/residual scores</td>
+</tr>
+<tr>
+<td>Statement of Applicability</td>
+<td>Documents</td>
+<td>Manual document or spreadsheet uploaded; SOA builder planned</td>
+</tr>
+<tr>
+<td>Acceptable use policy</td>
+<td>Documents</td>
+<td>Standard procedure</td>
+</tr>
+<tr>
+<td>Incident response procedure</td>
+<td>Documents</td>
+<td>Link incidents (NCR) to procedure</td>
+</tr>
+<tr>
+<td>Security incident records</td>
+<td>NCR</td>
+<td>Severity, root cause, corrective action</td>
+</tr>
+<tr>
+<td>Internal audit programme</td>
+<td>Audits / API</td>
+<td>Audit templates and runs; programme API available</td>
+</tr>
+<tr>
+<td>Internal audit reports</td>
+<td>Audits</td>
+<td>Findings with evidence attachments</td>
+</tr>
+<tr>
+<td>Management review minutes</td>
+<td>Documents</td>
+<td>Record category</td>
+</tr>
+<tr>
+<td>Corrective action records</td>
+<td>NCR</td>
+<td>Full CAPA lifecycle</td>
+</tr>
+<tr>
+<td>Evidence for certification audit</td>
+<td>Documents + Audits</td>
+<td>AGSA-style evidence register template</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iso-27001-implementation-workflow-on-maemo">3.7 ISO 27001
+implementation workflow on Maemo</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│ 1. SETUP                                                         │
+│    Select ISO 27001 at signup → categories + audit template seed │
+└────────────────────────────┬────────────────────────────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 2. PLAN (Clause 4–6)                                             │
+│    Publish ISMS policy, scope, methodology as controlled docs    │
+│    Populate risk register (Information Security risks)           │
+└────────────────────────────┬────────────────────────────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 3. DO (Clause 7–8)                                               │
+│    Operate procedures; upload records; link controls to risks    │
+│    Log security incidents as NCRs; link NCRs to risks            │
+└────────────────────────────┬────────────────────────────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 4. CHECK (Clause 9)                                              │
+│    Run ISO 27001 audit template; attach evidence per question    │
+│    Export POPIA trail; management review records in Documents    │
+└────────────────────────────┬────────────────────────────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 5. ACT (Clause 10)                                               │
+│    Findings → NCR → corrective action → effectiveness check      │
+│    Revise documents; update risk scores on closure               │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="iso-27001-known-gaps-and-mitigations">3.8 ISO 27001 — known gaps
+and mitigations</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 32%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr>
+<th>Gap</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No Statement of Applicability (SOA) builder</td>
+<td>Manual SOA maintenance</td>
+<td>Maintain SOA as controlled spreadsheet/document; map controls in
+audit template questions</td>
+</tr>
+<tr>
+<td>No Annex A control library</td>
+<td>No per-control status dashboard</td>
+<td>Use audit template categories aligned to Annex A themes; external
+GRC tool if required</td>
+</tr>
+<tr>
+<td>No KRI/KPI module</td>
+<td>Limited automated performance monitoring</td>
+<td>Track KPIs in management review records; integrate BI tools via
+Engine API</td>
+</tr>
+<tr>
+<td>No vulnerability/asset CMDB</td>
+<td>Technical control evidence external</td>
+<td>Link risk register entries to asset references in text; store scan
+reports as documents</td>
+</tr>
+<tr>
+<td>Generic audit template (7 questions)</td>
+<td>Not clause-by-clause for all 93 controls</td>
+<td>Expand template with consultant-defined questions per Annex A
+control subset</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="iso-223012019-how-maemo-helps">4. ISO 22301:2019 — How Maemo
+helps</h2>
+<h3 id="what-iso-22301-requires-brief">4.1 What ISO 22301 requires
+(brief)</h3>
+<p>ISO 22301 specifies requirements for a <strong>Business Continuity
+Management System (BCMS)</strong> to protect against, reduce the
+likelihood of, prepare for, respond to, and recover from disruptive
+incidents.</p>
+<table>
+<thead>
+<tr>
+<th>Clause</th>
+<th>Theme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>Context of the organisation</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Leadership</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Planning</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Support</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Operation (BIA, BC strategies, plans, exercise)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Performance evaluation</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Improvement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="honest-assessment-iso-22301-in-maemo-today">4.2 Honest
+assessment: ISO 22301 in Maemo today</h3>
+<p><strong>Maemo does not currently include:</strong></p>
+<ul>
+<li>A dedicated <strong>ISO 22301 module</strong> or template pack<br />
+</li>
+<li><strong>Business Impact Analysis (BIA)</strong> tool with recovery
+time objectives (RTO) / recovery point objectives (RPO)<br />
+</li>
+<li><strong>Business continuity strategy</strong> register<br />
+</li>
+<li><strong>Exercise and test scheduler</strong> with automated
+reminders<br />
+</li>
+<li><strong>Crisis communication</strong> contact cascade<br />
+</li>
+<li><strong>Maximum tolerable period of disruption (MTPD)</strong>
+tracking</li>
+</ul>
+<p><strong>Maemo does support</strong> the <strong>management system
+backbone</strong> that BCMS certification still requires:</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 44%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th>BCMS need</th>
+<th>Maemo support</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BC policy</td>
+<td>Documents — controlled approval</td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>BC scope</td>
+<td>Documents</td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>BC plans and procedures</td>
+<td>Documents — versioned, review-dated</td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>Risk of disruption</td>
+<td>Risks — Operational / Compliance categories</td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>Corrective action after incidents/exercises</td>
+<td>NCR — CAPA with effectiveness check</td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>Internal audit of BCMS</td>
+<td>Audits — custom template (consultant-defined)</td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>Management review</td>
+<td>Documents — management review template (ISO 9001 pack,
+adaptable)</td>
+<td><strong>Partially supported</strong></td>
+</tr>
+<tr>
+<td>Records retention</td>
+<td>Records retention + NARSA metadata</td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>Evidence for certification</td>
+<td>Documents + Audits</td>
+<td><strong>Supported</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="clause-by-clause-support-matrix-iso-223012019">4.3
+Clause-by-clause support matrix (ISO 22301:2019)</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 28%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr>
+<th>Clause</th>
+<th>Requirement (summary)</th>
+<th>Maemo support</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>4.1</strong></td>
+<td>Context</td>
+<td><strong>Partially supported</strong></td>
+<td>Context analysis as controlled document</td>
+</tr>
+<tr>
+<td><strong>4.2</strong></td>
+<td>Interested parties</td>
+<td><strong>Partially supported</strong></td>
+<td>Documented in BCMS records</td>
+</tr>
+<tr>
+<td><strong>4.3</strong></td>
+<td>BCMS scope</td>
+<td><strong>Supported</strong></td>
+<td>Scope as approved document</td>
+</tr>
+<tr>
+<td><strong>4.4</strong></td>
+<td>BCMS</td>
+<td><strong>Partially supported</strong></td>
+<td>Process records in Maemo; BCMS design is organisational</td>
+</tr>
+<tr>
+<td><strong>5.1</strong></td>
+<td>Leadership</td>
+<td><strong>Partially supported</strong></td>
+<td>BC policy with approval evidence</td>
+</tr>
+<tr>
+<td><strong>5.2</strong></td>
+<td>Policy</td>
+<td><strong>Supported</strong></td>
+<td>Policy document with workflow</td>
+</tr>
+<tr>
+<td><strong>5.3</strong></td>
+<td>Roles</td>
+<td><strong>Partially supported</strong></td>
+<td>Document owners, NCR owners, audit roles</td>
+</tr>
+<tr>
+<td><strong>6.1</strong></td>
+<td>Actions for risks/opportunities</td>
+<td><strong>Supported</strong></td>
+<td>Risk register</td>
+</tr>
+<tr>
+<td><strong>6.2</strong></td>
+<td>BC objectives</td>
+<td><strong>Partially supported</strong></td>
+<td>Documented objectives; no KPI module</td>
+</tr>
+<tr>
+<td><strong>6.3</strong></td>
+<td>Planning changes</td>
+<td><strong>Partially supported</strong></td>
+<td>Change-controlled documents</td>
+</tr>
+<tr>
+<td><strong>7.1–7.4</strong></td>
+<td>Support</td>
+<td><strong>Partially supported</strong></td>
+<td>Same as ISO 27001 — documents, templates</td>
+</tr>
+<tr>
+<td><strong>7.5</strong></td>
+<td>Documented information</td>
+<td><strong>Supported</strong></td>
+<td>Full document control</td>
+</tr>
+<tr>
+<td><strong>8.2</strong></td>
+<td>Business impact analysis</td>
+<td><strong>Not supported</strong></td>
+<td>Use spreadsheet or dedicated BCM tool; store BIA report as
+document</td>
+</tr>
+<tr>
+<td><strong>8.3</strong></td>
+<td>BC strategies</td>
+<td><strong>Partially supported</strong></td>
+<td>Strategy documents controlled in Maemo</td>
+</tr>
+<tr>
+<td><strong>8.4</strong></td>
+<td>BC plans</td>
+<td><strong>Supported</strong></td>
+<td>Plans as controlled documents with review cycle</td>
+</tr>
+<tr>
+<td><strong>8.5</strong></td>
+<td>Exercise programme</td>
+<td><strong>Not supported</strong></td>
+<td>Schedule exercises externally; record results as NCR/documents</td>
+</tr>
+<tr>
+<td><strong>8.6</strong></td>
+<td>Evaluation of BC documentation</td>
+<td><strong>Partially supported</strong></td>
+<td>Document review workflow; audit module</td>
+</tr>
+<tr>
+<td><strong>9.1</strong></td>
+<td>Monitoring</td>
+<td><strong>Partially supported</strong></td>
+<td>Dashboard; review dates</td>
+</tr>
+<tr>
+<td><strong>9.2</strong></td>
+<td>Internal audit</td>
+<td><strong>Supported</strong></td>
+<td>Custom BCMS audit template</td>
+</tr>
+<tr>
+<td><strong>9.3</strong></td>
+<td>Management review</td>
+<td><strong>Partially supported</strong></td>
+<td>Management review records</td>
+</tr>
+<tr>
+<td><strong>10.1</strong></td>
+<td>Nonconformity</td>
+<td><strong>Supported</strong></td>
+<td>NCR module</td>
+</tr>
+<tr>
+<td><strong>10.2</strong></td>
+<td>Continual improvement</td>
+<td><strong>Supported</strong></td>
+<td>CAPA loop + document updates</td>
+</tr>
+</tbody>
+</table>
+<h3 id="running-iso-22301-on-maemo-recommended-approach">4.4 Running ISO
+22301 on Maemo — recommended approach</h3>
+<p>Until a dedicated BCM module is available, organisations can
+implement a <strong>document-centric BCMS</strong> on Maemo:</p>
+<h4 id="step-1-establish-bcms-documentation-structure">Step 1 —
+Establish BCMS documentation structure</h4>
+<p>Create document categories (via tenant settings) such as:</p>
+<ul>
+<li>BC Policy<br />
+</li>
+<li>BC Plan<br />
+</li>
+<li>BC Procedure<br />
+</li>
+<li>BIA Report<br />
+</li>
+<li>Exercise Report<br />
+</li>
+<li>BC Record</li>
+</ul>
+<p>Use the <strong>Control of Documents</strong> and <strong>Control of
+Records</strong> procedure templates (ISO 9001 pack) as the document
+control backbone — ISO 22301 Clause 7.5 aligns with the same documented
+information principles.</p>
+<h4 id="step-2-business-impact-analysis">Step 2 — Business Impact
+Analysis</h4>
+<p>Conduct BIA using your preferred method (spreadsheet, workshop
+output, or specialist BCM software). <strong>Upload the approved BIA
+report</strong> as a controlled document with:</p>
+<ul>
+<li>Review date (annual or on organisational change)<br />
+</li>
+<li>Approver sign-off via workflow<br />
+</li>
+<li>Version history when BIA is updated</li>
+</ul>
+<h4 id="step-3-bc-plans-and-procedures">Step 3 — BC plans and
+procedures</h4>
+<p>Maintain <strong>Business Continuity Plans</strong> as active
+controlled documents:</p>
+<ul>
+<li>Activation criteria<br />
+</li>
+<li>Recovery teams and contacts (in document content)<br />
+</li>
+<li>Communication procedures<br />
+</li>
+<li>Recovery steps per critical activity</li>
+</ul>
+<p>Maemo ensures the <strong>correct version</strong> is active, review
+is not overdue, and obsolete plans are archived.</p>
+<h4 id="step-4-risks-of-disruption">Step 4 — Risks of disruption</h4>
+<p>Register disruption-related risks in the <strong>Risks
+module</strong>:</p>
+<ul>
+<li>Category: <strong>Operational</strong> or
+<strong>Compliance</strong><br />
+</li>
+<li>Inherent/residual assessment of disruption likelihood and
+impact<br />
+</li>
+<li>Link to BC plans (reference in risk description or related document
+title)<br />
+</li>
+<li>Link to NCRs when incidents occur</li>
+</ul>
+<h4 id="step-5-exercises-and-tests">Step 5 — Exercises and tests</h4>
+<p>When exercises are conducted:</p>
+<ol type="1">
+<li>Record exercise <strong>results</strong> as a controlled document
+(Exercise Report)<br />
+</li>
+<li>Raise <strong>NCRs</strong> for gaps found during the exercise<br />
+</li>
+<li>Link NCRs to relevant <strong>risks</strong> and <strong>audit
+findings</strong> if an internal BCMS audit is running in parallel<br />
+</li>
+<li>Track corrective actions to closure with effectiveness
+confirmation</li>
+</ol>
+<h4 id="step-6-internal-audit-and-certification">Step 6 — Internal audit
+and certification</h4>
+<p>Create a <strong>BCMS audit template</strong> (consultant or internal
+auditor) with questions mapped to ISO 22301 clauses. Execute audit runs,
+attach evidence, raise findings as NCRs.</p>
+<h3 id="iso-22301-workflow-diagram-current-capabilities">4.5 ISO 22301
+workflow diagram (current capabilities)</h3>
+<pre><code>                    ┌──────────────────┐
+                    │  BC Policy       │
+                    │  (Documents)     │
+                    └────────┬─────────┘
+                             │
+         ┌───────────────────┼───────────────────┐
+         ▼                   ▼                   ▼
+┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ BIA Report      │ │ BC Plans        │ │ Risk Register   │
+│ (uploaded doc)  │ │ (controlled)    │ │ (disruption)    │
+└────────┬────────┘ └────────┬────────┘ └────────┬────────┘
+         │                   │                   │
+         └───────────────────┼───────────────────┘
+                             ▼
+                    ┌──────────────────┐
+                    │ Exercise         │  ← scheduling external today
+                    │ (report → doc)   │
+                    └────────┬─────────┘
+                             ▼
+                    ┌──────────────────┐
+                    │ NCR / CAPA       │  ← gaps from exercise or real incident
+                    └────────┬─────────┘
+                             ▼
+                    ┌──────────────────┐
+                    │ BCMS Audit       │
+                    │ (Audits module)  │
+                    └──────────────────┘</code></pre>
+<h3 id="iso-22301-roadmap">4.6 ISO 22301 — roadmap</h3>
+<p>Codist plans the following BCM enhancements (indicative; not
+committed dates):</p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr>
+<th>Planned capability</th>
+<th>Benefit for ISO 22301</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO 22301 template pack</td>
+<td>BC policy, BIA procedure, exercise procedure, plan templates</td>
+</tr>
+<tr>
+<td>BIA register</td>
+<td>Activities, MTPD, RTO, RPO, dependencies</td>
+</tr>
+<tr>
+<td>Exercise programme</td>
+<td>Schedule, reminders, link to NCR on failure</td>
+</tr>
+<tr>
+<td>BC plan activation log</td>
+<td>Record activations as NCR or dedicated record type</td>
+</tr>
+<tr>
+<td>Combined ISMS + BCMS dashboard</td>
+<td>Unified view for organisations running both standards</td>
+</tr>
+</tbody>
+</table>
+<p>Contact Codist for roadmap timing if ISO 22301 certification is on a
+fixed deadline.</p>
+<hr />
+<h2 id="combined-iso-27001-iso-22301-on-one-maemo-tenant">5. Combined
+ISO 27001 + ISO 22301 on one Maemo tenant</h2>
+<p>Many organisations implement <strong>information security</strong>
+and <strong>business continuity</strong> together. Maemo supports a
+unified approach:</p>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Shared capability</th>
+<th>ISO 27001 use</th>
+<th>ISO 22301 use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document control</td>
+<td>ISMS policies, procedures, SOA</td>
+<td>BC plans, BIA reports, exercise records</td>
+</tr>
+<tr>
+<td>Risk register</td>
+<td>Information security risks</td>
+<td>Operational disruption risks</td>
+</tr>
+<tr>
+<td>NCR / CAPA</td>
+<td>Security incidents, control failures</td>
+<td>Exercise gaps, real disruption events</td>
+</tr>
+<tr>
+<td>Audits</td>
+<td>ISMS internal audit (seeded template)</td>
+<td>BCMS internal audit (custom template)</td>
+</tr>
+<tr>
+<td>POPIA trail</td>
+<td>Personal data access evidence</td>
+<td>Privacy during crisis (if PII in BC contacts)</td>
+</tr>
+<tr>
+<td>Records retention</td>
+<td>Security logs retention policy docs</td>
+<td>BC records retention</td>
+</tr>
+</tbody>
+</table>
+<h3 id="suggested-document-taxonomy-combined-tenant">Suggested document
+taxonomy (combined tenant)</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 39%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr>
+<th>Category</th>
+<th>ISO 27001 examples</th>
+<th>ISO 22301 examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Information Security Policy</td>
+<td>Acceptable use, access control policy</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Information Security Procedure</td>
+<td>Incident response, backup procedure</td>
+<td>—</td>
+</tr>
+<tr>
+<td>BC Policy</td>
+<td>—</td>
+<td>Business continuity policy</td>
+</tr>
+<tr>
+<td>BC Plan</td>
+<td>IT disaster recovery plan (also ISO 27001 A.5.29)</td>
+<td>Organisational BC plan</td>
+</tr>
+<tr>
+<td>Shared records</td>
+<td>Incident logs, audit reports</td>
+<td>Exercise reports, activation records</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="audit-and-certification-preparation-checklist">6. Audit and
+certification preparation checklist</h2>
+<p>Use this checklist when preparing for an ISO 27001 or ISO 22301
+certification audit with Maemo as your compliance platform.</p>
+<h3 id="before-the-certification-audit">6.1 Before the certification
+audit</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />All policies and procedures are
+<strong>Active</strong> with current review dates<br />
+</label></li>
+<li><label><input type="checkbox" />Risk register is populated with
+<strong>Information Security</strong> (27001) and/or
+<strong>Operational</strong> (22301) risks<br />
+</label></li>
+<li><label><input type="checkbox" />Residual scores reflect implemented
+controls<br />
+</label></li>
+<li><label><input type="checkbox" />Open NCRs have owners, due dates,
+and corrective actions<br />
+</label></li>
+<li><label><input type="checkbox" />Internal audit completed within the
+certification cycle; findings closed or with approved action plans<br />
+</label></li>
+<li><label><input type="checkbox" />Management review records uploaded
+for the review period<br />
+</label></li>
+<li><label><input type="checkbox" />POPIA access trail exported (if
+applicable)<br />
+</label></li>
+<li><label><input type="checkbox" />Consultant/auditor has access to run
+audit templates or export evidence</label></li>
+</ul>
+<h3 id="evidence-commonly-requested-by-auditors">6.2 Evidence commonly
+requested by auditors</h3>
+<table>
+<colgroup>
+<col style="width: 51%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr>
+<th>Auditor request</th>
+<th>Where in Maemo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show me your approved Information Security Policy</td>
+<td>Documents → Active → category Information Security Policy</td>
+</tr>
+<tr>
+<td>Show version history of the BC plan</td>
+<td>Documents → version history</td>
+</tr>
+<tr>
+<td>Show risk assessment for [system/process]</td>
+<td>Risks → filter Information Security or Operational</td>
+</tr>
+<tr>
+<td>Show corrective action from last incident</td>
+<td>NCR → linked to risk/audit finding</td>
+</tr>
+<tr>
+<td>Show internal audit programme</td>
+<td>Audit templates/runs (programme API if using integrated
+scheduling)</td>
+</tr>
+<tr>
+<td>Show evidence of document review</td>
+<td>Document review dates; workflow approval timestamps</td>
+</tr>
+<tr>
+<td>Show who accessed personal information records</td>
+<td>Admin → POPIA trail report</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="comparison-summary">7. Comparison summary</h2>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 38%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>ISO 27001 on Maemo</th>
+<th>ISO 22301 on Maemo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Onboarding seed</strong></td>
+<td>Yes — categories + audit template</td>
+<td>No — manual setup today</td>
+</tr>
+<tr>
+<td><strong>Document control</strong></td>
+<td>Fully supported</td>
+<td>Fully supported</td>
+</tr>
+<tr>
+<td><strong>Risk register</strong></td>
+<td>Information Security category</td>
+<td>Operational / Compliance categories</td>
+</tr>
+<tr>
+<td><strong>CAPA / incidents</strong></td>
+<td>NCR module</td>
+<td>NCR module</td>
+</tr>
+<tr>
+<td><strong>Internal audit</strong></td>
+<td>Pre-seeded ISO 27001 template</td>
+<td>Custom template required</td>
+</tr>
+<tr>
+<td><strong>POPIA alignment</strong></td>
+<td>Strong</td>
+<td>Adjacent (contact data in plans)</td>
+</tr>
+<tr>
+<td><strong>BIA / RTO / RPO</strong></td>
+<td>Not in scope (cyber BIA as document)</td>
+<td>Not supported — external tool</td>
+</tr>
+<tr>
+<td><strong>Exercise management</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td><strong>Certification readiness</strong></td>
+<td><strong>High</strong> with complementary IT controls</td>
+<td><strong>Moderate</strong> — BCMS ops tooling needed for Clause
+8.2/8.5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="professional-services-from-codist">8. Professional services from
+Codist</h2>
+<p>Codist can assist with ISO 27001 and ISO 22301 implementations on
+Maemo:</p>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr>
+<th>Service</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISMS quick-start</td>
+<td>ISO 27001 template customisation, risk register seed, audit template
+expansion</td>
+</tr>
+<tr>
+<td>BCMS document-centric setup</td>
+<td>Category structure, plan templates, exercise-to-NCR workflow
+design</td>
+</tr>
+<tr>
+<td>POPIA + ISO 27001 alignment</td>
+<td>PII classification scheme, retention rules, trail reporting
+setup</td>
+</tr>
+<tr>
+<td>Consultant enablement</td>
+<td>Multi-tenant consultant configuration, client audit templates</td>
+</tr>
+<tr>
+<td>Migration</td>
+<td>Import existing policies, risks, and registers from Excel</td>
+</tr>
+<tr>
+<td>Pre-certification review</td>
+<td>Gap analysis against ISO 27001/22301 using Maemo artefact
+review</td>
+</tr>
+</tbody>
+</table>
+<p>Contact: <strong>technical@codist.co.za</strong> |
+https://maemo-compliance.co.za/contact</p>
+<hr />
+<h2 id="glossary">9. Glossary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIA</td>
+<td>Business Impact Analysis</td>
+</tr>
+<tr>
+<td>BCMS</td>
+<td>Business Continuity Management System</td>
+</tr>
+<tr>
+<td>CAPA</td>
+<td>Corrective and Preventive Action</td>
+</tr>
+<tr>
+<td>ISMS</td>
+<td>Information Security Management System</td>
+</tr>
+<tr>
+<td>MTPD</td>
+<td>Maximum Tolerable Period of Disruption</td>
+</tr>
+<tr>
+<td>NCR</td>
+<td>Non-Conformance Report</td>
+</tr>
+<tr>
+<td>PDCA</td>
+<td>Plan-Do-Check-Act</td>
+</tr>
+<tr>
+<td>POPIA</td>
+<td>Protection of Personal Information Act (South Africa)</td>
+</tr>
+<tr>
+<td>RPO</td>
+<td>Recovery Point Objective</td>
+</tr>
+<tr>
+<td>RTO</td>
+<td>Recovery Time Objective</td>
+</tr>
+<tr>
+<td>SOA</td>
+<td>Statement of Applicability (ISO 27001)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="disclaimer">10. Disclaimer</h2>
+<p>This guide describes how Maemo Compliance <strong>supports</strong>
+ISO/IEC 27001:2022 and ISO 22301:2019 implementation. It is not a
+substitute for the official standard texts, legal advice, or
+certification body requirements. Control mappings are indicative; your
+organisation is responsible for determining applicability of
+requirements and demonstrating conformity to your auditor.</p>
+<p>Features described as planned are not contractual unless agreed in
+writing. Standards versions cited: ISO/IEC 27001:2022, ISO
+22301:2019.</p>
+<hr />
+<p><strong>Codist (Pty) Ltd</strong><br />
+Product: Maemo Compliance<br />
+Web: https://maemo-compliance.co.za<br />
+Email: technical@codist.co.za</p>
+<p><em>End of document</em></p>
+</body>
+</html>

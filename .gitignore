@@ -20,3 +20,7 @@ e2e/maemo-compliance/blob-report/
 .vs/
 *.user
 .DS_Store
+
+# Interview prep (local only)
+INTERVIEW_PREP.md
+INTERVIEW_PREP.warroom.json

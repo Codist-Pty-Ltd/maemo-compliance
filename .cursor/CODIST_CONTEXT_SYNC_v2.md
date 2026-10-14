@@ -5,7 +5,7 @@ _Paste at the start of any new Claude/Cursor agent chat when you want studio-wid
 ```
 CODIST CONTEXT SYNC v2 — May 2026
 
-Founder: Ntoky Banda, Johannesburg, South Africa
+Founder: Ntokozo Banda, Johannesburg, South Africa
 Studio: Codist (Pty) Ltd
 Stack: .NET 8, Angular, TypeScript, PostgreSQL,
        Flutter, Next.js, NestJS, Python, Docker

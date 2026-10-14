@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Maemo Compliance Product Specification</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Maemo Compliance Product Specification</h1>
+</header>
+<h1 id="maemo-compliance-product-specification">Maemo Compliance —
+Product Specification</h1>
+<p><strong>Document title:</strong> Maemo Compliance Product
+Specification<br />
+<strong>Product:</strong> Maemo Compliance<br />
+<strong>Publisher:</strong> Codist (Pty) Ltd<br />
+<strong>Version:</strong> 1.0<br />
+<strong>Date:</strong> July 2026<br />
+<strong>Classification:</strong> Client-facing — for evaluation and
+procurement<br />
+<strong>Website:</strong> https://maemo-compliance.co.za</p>
+<hr />
+<h2 id="document-control">Document control</h2>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 14%" />
+<col style="width: 19%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Summary of changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>July 2026</td>
+<td>Codist Product Team</td>
+<td>Initial client product specification</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="executive-summary">1. Executive summary</h2>
+<p><strong>Maemo Compliance</strong> is a cloud-ready, multi-tenant
+compliance operations platform designed for South African organisations
+that need to manage documented management systems, corrective action,
+risk registers, and audit programmes in one secure workspace.</p>
+<p>The platform helps teams <strong>implement and maintain</strong>
+requirements arising from standards such as <strong>ISO 9001</strong>,
+<strong>ISO 14001</strong>, <strong>ISO 45001</strong>, <strong>ISO
+27001</strong>, and <strong>POPIA</strong>, alongside records-management
+practices aligned with <strong>NARSA</strong> and audit evidence
+practices aligned with <strong>AGSA</strong> expectations.</p>
+<p>Maemo is <strong>not</strong> a full enterprise GRC (Governance, Risk
+&amp; Compliance) suite. It is a <strong>compliance operations
+layer</strong>: document control, evidence, non-conformance management,
+risk registers, consultant-led audits, and POPIA-oriented access
+reporting — delivered as modular, tenant-licensed software that can be
+deployed on Codist-managed infrastructure or customer-controlled
+environments.</p>
+<h3 id="key-benefits">Key benefits</h3>
+<ul>
+<li><strong>Single workspace</strong> for policies, procedures, records,
+CAPA, risks, and audit evidence<br />
+</li>
+<li><strong>South African context</strong> — POPIA metadata, NARSA
+file-plan fields, BBBEE certificate tracking<br />
+</li>
+<li><strong>Modular licensing</strong> — enable only the modules each
+tenant needs<br />
+</li>
+<li><strong>Consultant-ready</strong> — consultants can manage multiple
+client tenants and run structured audits<br />
+</li>
+<li><strong>Integration-ready</strong> — Engine API
+(<code>/engine/v1/*</code>) for headless and third-party
+integration<br />
+</li>
+<li><strong>Deployable</strong> — Docker-based services; suitable for
+private cloud or on-premises deployment</li>
+</ul>
+<hr />
+<h2 id="product-overview">2. Product overview</h2>
+<h3 id="purpose">2.1 Purpose</h3>
+<p>Maemo Compliance reduces the operational burden of running a
+management system by providing:</p>
+<ol type="1">
+<li>Controlled document lifecycle management with approval workflow and
+versioning<br />
+</li>
+<li>Non-conformance and corrective action (CAPA) tracking with
+audit-finding linkage<br />
+</li>
+<li>A central risk register with inherent and residual scoring<br />
+</li>
+<li>Structured internal audit execution with evidence capture<br />
+</li>
+<li>POPIA-oriented personal-information access reporting on controlled
+documents<br />
+</li>
+<li>Records retention scheduling and archival/destruction support</li>
+</ol>
+<h3 id="target-users">2.2 Target users</h3>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Quality / compliance manager</strong></td>
+<td>Document control, NCR oversight, audit preparation</td>
+</tr>
+<tr>
+<td><strong>Department owner</strong></td>
+<td>Maintain procedures, respond to findings, manage department
+risks</td>
+</tr>
+<tr>
+<td><strong>Internal auditor / consultant</strong></td>
+<td>Run audit templates, capture evidence, raise findings</td>
+</tr>
+<tr>
+<td><strong>Information security officer</strong></td>
+<td>ISMS documentation, information-security risks, POPIA trail</td>
+</tr>
+<tr>
+<td><strong>Tenant administrator</strong></td>
+<td>User invites, tenant settings, M365/SharePoint connection</td>
+</tr>
+<tr>
+<td><strong>Executive / reviewer</strong></td>
+<td>Dashboard summary, management review inputs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-standards-configuration-templates">2.3 Supported
+standards (configuration &amp; templates)</h3>
+<p>During signup and company setup, organisations select target
+standards. Maemo configures categories, onboarding seeds, and audit
+templates accordingly.</p>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 42%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Standard / framework</th>
+<th>Supported in product</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO 9001:2015</td>
+<td>Yes</td>
+<td>Document template pack; audit template seeded on onboarding</td>
+</tr>
+<tr>
+<td>ISO 14001:2015</td>
+<td>Yes</td>
+<td>Environmental categories; audit template</td>
+</tr>
+<tr>
+<td>ISO 45001:2018</td>
+<td>Yes</td>
+<td>Safety categories; audit template</td>
+</tr>
+<tr>
+<td>ISO 27001:2022</td>
+<td>Yes</td>
+<td>Information security categories; audit template</td>
+</tr>
+<tr>
+<td>POPIA</td>
+<td>Yes</td>
+<td>Document PII classification; data breach notification template;
+access trail report</td>
+</tr>
+<tr>
+<td>ISO 31000</td>
+<td>Partial</td>
+<td>Risk categories seeded; no dedicated ISO 31000 template pack</td>
+</tr>
+<tr>
+<td>NARSA / records</td>
+<td>Yes</td>
+<td>Retention schedule template; file-plan metadata on documents</td>
+</tr>
+<tr>
+<td>AGSA audit evidence</td>
+<td>Yes</td>
+<td>Audit evidence register template</td>
+</tr>
+<tr>
+<td>ISO 22301</td>
+<td>Not yet</td>
+<td>See companion document for adjacent support and roadmap</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="architecture">3. Architecture</h2>
+<h3 id="platform-components">3.1 Platform components</h3>
+<p>Maemo is delivered as a set of cooperating services:</p>
+<table>
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identity service</strong></td>
+<td>User registration, login, email verification, tenant provisioning,
+JWT issuance</td>
+</tr>
+<tr>
+<td><strong>Compliance engine</strong></td>
+<td>Documents, NCRs, risks, audits, departments, webhooks, API keys</td>
+</tr>
+<tr>
+<td><strong>Portal</strong></td>
+<td>Angular web application for tenant users</td>
+</tr>
+<tr>
+<td><strong>Workers</strong></td>
+<td>Scheduled jobs: records retention, email queue, compliance
+reminders</td>
+</tr>
+<tr>
+<td><strong>Public site</strong></td>
+<td>Marketing, contact, and access-request flows</td>
+</tr>
+<tr>
+<td><strong>Admin console</strong></td>
+<td>Codist internal administration (access requests, tenant
+oversight)</td>
+</tr>
+</tbody>
+</table>
+<p>Production deployments use <strong>PostgreSQL</strong> as the system
+of record, <strong>Docker</strong> containers, and
+<strong>nginx</strong> reverse proxy with TLS termination.
+Authentication supports <strong>Azure AD (MSAL)</strong> and
+<strong>local email/password</strong> with JWT bearer tokens.</p>
+<h3 id="multi-tenancy">3.2 Multi-tenancy</h3>
+<p>Every compliance record is <strong>tenant-scoped</strong>. Users
+authenticate into a tenant context; API requests carry tenant identity
+via JWT claims and optional headers. This model supports:</p>
+<ul>
+<li>Isolated customer organisations on shared infrastructure<br />
+</li>
+<li>Consultant users linked to multiple client tenants<br />
+</li>
+<li>Per-tenant module licensing and configuration</li>
+</ul>
+<h3 id="deployment-models">3.3 Deployment models</h3>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr>
+<th>Model</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Codist SaaS</strong></td>
+<td>Hosted on Codist-managed infrastructure (current production
+pattern)</td>
+</tr>
+<tr>
+<td><strong>Private cloud / VPS</strong></td>
+<td>Customer or partner-managed Docker deployment using published
+images</td>
+</tr>
+<tr>
+<td><strong>On-premises</strong></td>
+<td>Same container stack deployed inside customer network perimeter</td>
+</tr>
+</tbody>
+</table>
+<p>File storage defaults to <strong>local encrypted volume</strong> in
+production; <strong>Microsoft 365 / SharePoint</strong> integration is
+available for organisations that prefer document storage in their
+tenant.</p>
+<hr />
+<h2 id="functional-modules">4. Functional modules</h2>
+<p>Modules are licensed per tenant via <code>ModulesEnabledJson</code>.
+Available module keys: <strong>Documents</strong>, <strong>NCR</strong>,
+<strong>Risks</strong>, <strong>Audits</strong>.</p>
+<h3 id="documents-module">4.1 Documents module</h3>
+<p><strong>Purpose:</strong> Control policies, procedures, forms, and
+records required by the management system.</p>
+<h4 id="core-capabilities">Core capabilities</h4>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document register</td>
+<td>Searchable list with category, department, workflow state, and
+review date</td>
+</tr>
+<tr>
+<td>Approval workflow</td>
+<td>Draft → Pending Approval → Approved → Active → Archived /
+Obsolete</td>
+</tr>
+<tr>
+<td>Version control</td>
+<td>Semantic versioning with upload/download per version</td>
+</tr>
+<tr>
+<td>File integrity</td>
+<td>SHA-256 hash stored per document for tamper detection</td>
+</tr>
+<tr>
+<td>Review scheduling</td>
+<td>Mandatory review dates on controlled documents</td>
+</tr>
+<tr>
+<td>Approver controls</td>
+<td>Role-based approval (<code>DocumentApprover</code> policy)</td>
+</tr>
+<tr>
+<td>Template library</td>
+<td>Pre-built ISO 9001, POPIA, NARSA, and AGSA starter templates</td>
+</tr>
+<tr>
+<td>Evidence export</td>
+<td>Client-side audit evidence HTML export from document detail</td>
+</tr>
+</tbody>
+</table>
+<h4 id="popia-records-metadata">POPIA &amp; records metadata</h4>
+<table>
+<colgroup>
+<col style="width: 65%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th>Field / feature</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PII classification</td>
+<td>Classify documents containing personal information</td>
+</tr>
+<tr>
+<td>Retention period (months)</td>
+<td>POPIA-aligned retention on PII documents</td>
+</tr>
+<tr>
+<td>Retain-until date</td>
+<td>Records retention scheduling</td>
+</tr>
+<tr>
+<td>NARSA file plan</td>
+<td>Series, sub-series, and item classification</td>
+</tr>
+<tr>
+<td>Destruction tracking</td>
+<td>Audit trail when records are destroyed per retention policy</td>
+</tr>
+<tr>
+<td>BBBEE certificate tracking</td>
+<td>Expiry date and level (Levels 1–8) for transformation
+compliance</td>
+</tr>
+</tbody>
+</table>
+<h4 id="workflow-states">Workflow states</h4>
+<pre><code>Draft → PendingApproval → Approved → Active → Archived
+                              ↓
+                          Obsolete (superseded)</code></pre>
+<p>Rejected documents return to Draft with a recorded reason.</p>
+<hr />
+<h3 id="ncr-module-non-conformance-capa">4.2 NCR module (Non-Conformance
+&amp; CAPA)</h3>
+<p><strong>Purpose:</strong> Record, investigate, and close
+non-conformities, incidents, and corrective actions.</p>
+<h4 id="core-capabilities-1">Core capabilities</h4>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NCR register</td>
+<td>Filter by status, severity, and department</td>
+</tr>
+<tr>
+<td>Severity levels</td>
+<td>Configurable severity classification</td>
+</tr>
+<tr>
+<td>CAPA fields</td>
+<td>Root cause, corrective action, owner, due dates, effectiveness
+confirmation</td>
+</tr>
+<tr>
+<td>Status history</td>
+<td>Full audit trail of status changes</td>
+</tr>
+<tr>
+<td>Audit finding link</td>
+<td>Create NCR directly from audit finding</td>
+</tr>
+<tr>
+<td>Risk linkage</td>
+<td>Link NCRs to risks in the risk register (bidirectional)</td>
+</tr>
+<tr>
+<td>Escalation level</td>
+<td>Supervisory → management → executive escalation tracking</td>
+</tr>
+<tr>
+<td>Offline capture</td>
+<td>Create NCR offline in browser; sync when connectivity returns</td>
+</tr>
+</tbody>
+</table>
+<h4 id="typical-use-cases">Typical use cases</h4>
+<ul>
+<li>Quality non-conformities (ISO 9001)<br />
+</li>
+<li>Safety incidents and near-misses (ISO 45001)<br />
+</li>
+<li>Security events and control failures (ISO 27001)<br />
+</li>
+<li>Post–business continuity exercise findings (ISO 22301 — via
+document/NCR process)</li>
+</ul>
+<hr />
+<h3 id="risks-module">4.3 Risks module</h3>
+<p><strong>Purpose:</strong> Maintain an organisation-wide risk register
+aligned to management system planning requirements.</p>
+<h4 id="core-capabilities-2">Core capabilities</h4>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risk register</td>
+<td>List, create, edit, and close risks</td>
+</tr>
+<tr>
+<td>5×5 scoring</td>
+<td>Inherent and residual likelihood × impact with calculated score</td>
+</tr>
+<tr>
+<td>Risk categories</td>
+<td>Operational, Financial, Compliance, Health &amp; Safety,
+<strong>Information Security</strong></td>
+</tr>
+<tr>
+<td>Risk status lifecycle</td>
+<td>Identified → Analysed → Mitigated → Accepted → Closed</td>
+</tr>
+<tr>
+<td>Existing controls</td>
+<td>Free-text description of current controls</td>
+</tr>
+<tr>
+<td>NCR linkage</td>
+<td>Associate risks with open non-conformances</td>
+</tr>
+<tr>
+<td>Review date</td>
+<td>Scheduled risk review</td>
+</tr>
+</tbody>
+</table>
+<h4 id="scope-note">Scope note</h4>
+<p>The risk register supports <strong>ISO 31000-style</strong> and
+management-system <strong>risk-and-opportunity</strong> processes. It is
+a <strong>general register</strong>, not a specialised occupational
+health &amp; safety (HIRA) assessment tool with configurable hazard
+matrices — HIRA is on the product roadmap as a separate module.</p>
+<hr />
+<h3 id="audits-module">4.4 Audits module</h3>
+<p><strong>Purpose:</strong> Plan and execute internal audits; capture
+findings and evidence.</p>
+<h4 id="core-capabilities-3">Core capabilities</h4>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Audit templates</td>
+<td>Reusable question sets grouped by category</td>
+</tr>
+<tr>
+<td>Audit runs</td>
+<td>Execute template against a scope; record answers</td>
+</tr>
+<tr>
+<td>Evidence upload</td>
+<td>Attach evidence files to individual audit answers</td>
+</tr>
+<tr>
+<td>Findings</td>
+<td>Record findings with severity; link to NCR</td>
+</tr>
+<tr>
+<td>Consultant ownership</td>
+<td>Templates owned by consultant users for multi-client practices</td>
+</tr>
+<tr>
+<td>Onboarding seeds</td>
+<td>ISO 9001, 14001, 45001, 27001 audit templates auto-created from
+selected standards</td>
+</tr>
+<tr>
+<td>Integrated SHEQ template</td>
+<td>Combined audit when multiple standards are selected</td>
+</tr>
+</tbody>
+</table>
+<h4 id="audit-programmes-api">Audit programmes (API)</h4>
+<p>Yearly audit programmes with scheduled items and linked audit runs
+are supported at <strong>API level</strong>. Portal UI for programme
+management is planned.</p>
+<h4 id="access-path">Access path</h4>
+<p>Audit execution is currently accessed via the <strong>Consultant
+workspace</strong> routes. A dedicated top-level Audits navigation entry
+is planned for tenant-admin and internal-auditor personas.</p>
+<hr />
+<h3 id="popia-compliance-cross-cutting">4.5 POPIA compliance
+(cross-cutting)</h3>
+<p>POPIA is implemented as metadata and reporting across the Documents
+module, not as a separate licensed module.</p>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PII document classification</td>
+<td>Tag documents containing personal information</td>
+</tr>
+<tr>
+<td>Access trail report</td>
+<td>Admin report showing who accessed PII-classified documents</td>
+</tr>
+<tr>
+<td>CSV export</td>
+<td>Export POPIA trail for regulator or internal audit</td>
+</tr>
+<tr>
+<td>Data breach notification template</td>
+<td>Starter POPIA form template in template library</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="records-retention-cross-cutting">4.6 Records retention
+(cross-cutting)</h3>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retention policy engine</td>
+<td>Category-based default retention periods</td>
+</tr>
+<tr>
+<td>Retention worker</td>
+<td>Daily scan marks documents past retention</td>
+</tr>
+<tr>
+<td>Destruction worker</td>
+<td>Physical file deletion when enabled and approved</td>
+</tr>
+<tr>
+<td>NARSA template</td>
+<td>Records retention schedule starter document</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="user-roles-and-access-control">5. User roles and access
+control</h2>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th>Role</th>
+<th>Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Platform Admin</strong></td>
+<td>Codist internal — tenant provisioning, access requests</td>
+</tr>
+<tr>
+<td><strong>Tenant Admin</strong></td>
+<td>Full tenant configuration, user invites, NCR delete, settings</td>
+</tr>
+<tr>
+<td><strong>Tenant User</strong></td>
+<td>Standard compliance operations within licensed modules</td>
+</tr>
+<tr>
+<td><strong>Consultant</strong></td>
+<td>Multi-tenant client dashboard, audit templates and runs,
+branding</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module-gating">Module gating</h3>
+<p>Both API and portal enforce module licensing. Users without a
+licensed module cannot access that module’s routes or endpoints.</p>
+<h3 id="authentication">Authentication</h3>
+<ul>
+<li>Azure Active Directory (MSAL) — enterprise SSO<br />
+</li>
+<li>Local email/password with email verification<br />
+</li>
+<li>JWT bearer tokens with tenant and role claims</li>
+</ul>
+<hr />
+<h2 id="consultant-model">6. Consultant model</h2>
+<p>Maemo supports compliance consultants who serve multiple client
+organisations:</p>
+<ul>
+<li><strong>Consultant dashboard</strong> — summary across linked client
+tenants<br />
+</li>
+<li><strong>Client list</strong> — navigate to client workspaces<br />
+</li>
+<li><strong>Audit templates</strong> — consultant-owned, reusable across
+clients<br />
+</li>
+<li><strong>Branding</strong> — consultant workspace branding
+(configuration API in progress)<br />
+</li>
+<li><strong>Consultant–tenant links</strong> — explicit relationship
+between consultant user and client tenant (identity service)</li>
+</ul>
+<p>This model suits ISO implementation partners, SHEQ consultants, and
+internal audit service providers.</p>
+<hr />
+<h2 id="integrations-and-api">7. Integrations and API</h2>
+<h3 id="engine-api">7.1 Engine API</h3>
+<p>Headless REST API at <code>/engine/v1/</code> for integrations:</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documents</td>
+<td>CRUD, upload, download, versions</td>
+</tr>
+<tr>
+<td>NCRs</td>
+<td>CRUD, status, history, risk links</td>
+</tr>
+<tr>
+<td>Risks</td>
+<td>CRUD, NCR linkage</td>
+</tr>
+<tr>
+<td>Audits</td>
+<td>Templates, runs, answers, evidence, findings</td>
+</tr>
+<tr>
+<td>Webhooks</td>
+<td>Subscribe to compliance events</td>
+</tr>
+<tr>
+<td>API keys</td>
+<td>Machine-to-machine authentication</td>
+</tr>
+</tbody>
+</table>
+<p>Authentication: JWT or API key with tenant scope.</p>
+<h3 id="microsoft-365">7.2 Microsoft 365</h3>
+<ul>
+<li>Azure AD sign-in<br />
+</li>
+<li>SharePoint document storage (optional; environment-dependent)<br />
+</li>
+<li>Tenant M365 connection wizard</li>
+</ul>
+<h3 id="email">7.3 Email</h3>
+<p>Transactional email via <strong>Resend</strong> for registration,
+verification, invitations, and access-request notifications.</p>
+<hr />
+<h2 id="onboarding-and-starter-content">8. Onboarding and starter
+content</h2>
+<h3 id="signup-and-company-setup">8.1 Signup and company setup</h3>
+<p>Self-service signup (Starter plan) or Growth plan with access-request
+approval:</p>
+<ol type="1">
+<li>User and company profile<br />
+</li>
+<li>Industry and company size<br />
+</li>
+<li>Target standards selection (ISO 9001, 14001, 45001, 27001,
+POPIA)<br />
+</li>
+<li>Plan selection</li>
+</ol>
+<h3 id="automated-seeding">8.2 Automated seeding</h3>
+<p>On completion of company setup, Maemo seeds:</p>
+<ul>
+<li>Document categories matched to selected standards<br />
+</li>
+<li>Risk category preferences<br />
+</li>
+<li>Audit templates for each selected ISO standard<br />
+</li>
+<li>Dashboard widgets appropriate to selected standards<br />
+</li>
+<li>Default departments (configurable)</li>
+</ul>
+<h3 id="template-library">8.3 Template library</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>Pack</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO 9001</td>
+<td>Quality manual overview, control of documents, control of records,
+internal audit procedure, management review, NCR/CAPA, risk &amp;
+opportunity, training &amp; competence</td>
+</tr>
+<tr>
+<td>POPIA</td>
+<td>Data breach notification form</td>
+</tr>
+<tr>
+<td>NARSA</td>
+<td>Records retention schedule</td>
+</tr>
+<tr>
+<td>AGSA</td>
+<td>Audit evidence register</td>
+</tr>
+</tbody>
+</table>
+<p>Templates are Markdown-based with merge fields
+(e.g. <code>{{CompanyName}}</code>, <code>{{ISOStandard}}</code>)
+populated on document creation.</p>
+<hr />
+<h2 id="notifications-and-background-processing">9. Notifications and
+background processing</h2>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th>Job</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Records retention scan</td>
+<td>Marks documents past retention date</td>
+</tr>
+<tr>
+<td>Document destruction</td>
+<td>Deletes files when retention policy and config allow</td>
+</tr>
+<tr>
+<td>Compliance jobs worker</td>
+<td>Logs upcoming document reviews, overdue NCRs, high risks, retention
+warnings</td>
+</tr>
+<tr>
+<td>Email queue worker</td>
+<td>Sends queued transactional and reminder emails (split workers
+service)</td>
+</tr>
+</tbody>
+</table>
+<p>Compliance event email notifications (review due, overdue NCR) are
+<strong>partially implemented</strong> — worker detection exists; full
+outbound email for all event types is on the roadmap.</p>
+<hr />
+<h2 id="technical-specification-summary">10. Technical specification
+summary</h2>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td>.NET 8, Minimal APIs, MediatR, FluentValidation</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>PostgreSQL 16</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>Angular (portal), PrimeNG UI components</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>JWT (RS256), Azure AD MSAL</td>
+</tr>
+<tr>
+<td>File storage</td>
+<td>Local volume or SharePoint</td>
+</tr>
+<tr>
+<td>Container runtime</td>
+<td>Docker / Docker Compose</td>
+</tr>
+<tr>
+<td>CI/CD</td>
+<td>GitHub Actions → GHCR → SSH deploy</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>xUnit unit tests, Testcontainers integration tests, Playwright
+E2E</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="security-and-data-protection">11. Security and data
+protection</h2>
+<table>
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr>
+<th>Control area</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tenant isolation</td>
+<td>Tenant-scoped data model; tenant context on every request</td>
+</tr>
+<tr>
+<td>Transport security</td>
+<td>TLS via nginx in production</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Industry-standard JWT; optional Azure AD federation</td>
+</tr>
+<tr>
+<td>File integrity</td>
+<td>SHA-256 hashes on stored documents</td>
+</tr>
+<tr>
+<td>POPIA</td>
+<td>PII classification, access trail reporting, retention metadata</td>
+</tr>
+<tr>
+<td>Audit logging</td>
+<td>Technical audit log and business audit log entities</td>
+</tr>
+<tr>
+<td>Service-to-service</td>
+<td>Internal API key for identity service calls</td>
+</tr>
+</tbody>
+</table>
+<p>Organisations requiring ISO 27001 certification should implement
+complementary technical controls (network segmentation, SIEM, backup,
+DR) in their hosting environment. Maemo provides the <strong>management
+system tooling</strong>; infrastructure security remains a shared
+responsibility between Codist and the customer depending on deployment
+model.</p>
+<hr />
+<h2 id="licensing-and-plans">12. Licensing and plans</h2>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th>Plan</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Starter</strong></td>
+<td>Self-service activation, 14-day trial, up to 5 users, 1 GB storage
+(configurable)</td>
+</tr>
+<tr>
+<td><strong>Growth</strong></td>
+<td>Access-request approval workflow; tenant activated after Codist
+review</td>
+</tr>
+</tbody>
+</table>
+<p>Module licensing (Documents, NCR, Risks, Audits) is configured per
+tenant. Billing integration (PayFast) exists but is feature-flagged;
+enterprise contracts are typically invoiced directly.</p>
+<hr />
+<h2 id="product-roadmap-indicative">13. Product roadmap
+(indicative)</h2>
+<p>The following capabilities are in development or planned. Dates are
+indicative and subject to change.</p>
+<table>
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Service architecture cutover (identity, engine, portal,
+workers)</td>
+<td>In progress</td>
+</tr>
+<tr>
+<td>HIRA module (configurable matrices, hazard library, OHS
+assessments)</td>
+<td>In development (split repos)</td>
+</tr>
+<tr>
+<td>Consultant multi-tenant JWT claims</td>
+<td>In development</td>
+</tr>
+<tr>
+<td>Audit programmes portal UI</td>
+<td>Planned</td>
+</tr>
+<tr>
+<td>Full compliance event email notifications</td>
+<td>Planned</td>
+</tr>
+<tr>
+<td>ISO 22301 template pack and BCM-specific registers</td>
+<td>Planned</td>
+</tr>
+<tr>
+<td>Enterprise reporting and combined assurance dashboards</td>
+<td>Planned</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="professional-services">14. Professional services</h2>
+<p>Codist offers implementation services alongside the software:</p>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr>
+<th>Service</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tenant provisioning and configuration</td>
+<td>Standards selection, category setup, user onboarding</td>
+</tr>
+<tr>
+<td>Template customisation</td>
+<td>Branded procedures and policies from starter templates</td>
+</tr>
+<tr>
+<td>Data migration</td>
+<td>Import from spreadsheets or legacy systems</td>
+</tr>
+<tr>
+<td>Consultant onboarding</td>
+<td>Multi-tenant setup for audit practices</td>
+</tr>
+<tr>
+<td>Training</td>
+<td>Administrator and end-user training</td>
+</tr>
+<tr>
+<td>Managed hosting</td>
+<td>Codist-operated SaaS with SLA</td>
+</tr>
+</tbody>
+</table>
+<p>Contact: <strong>technical@codist.co.za</strong> |
+https://maemo-compliance.co.za/contact</p>
+<hr />
+<h2 id="limitations-and-exclusions">15. Limitations and exclusions</h2>
+<p>Prospective clients should note the following current
+limitations:</p>
+<ol type="1">
+<li>Maemo is a <strong>compliance operations platform</strong>, not a
+certified GRC product with pre-mapped control libraries for every ISO
+Annex A control.<br />
+</li>
+<li><strong>ISO 22301</strong> business continuity management is
+<strong>not yet a dedicated module</strong> — adjacent features
+(documents, risks, NCR, audits) support BCM processes; see companion ISO
+document.<br />
+</li>
+<li><strong>HIRA</strong> (occupational risk assessment with hazard
+matrices) is on the roadmap; the current Risks module is a general
+register.<br />
+</li>
+<li>Some admin UI endpoints (records retention list, dashboard POPIA
+widgets) are incomplete in the current release.<br />
+</li>
+<li>Software supports certification efforts; <strong>certification
+itself</strong> requires organisational processes, competent auditors,
+and accredited certification bodies.</li>
+</ol>
+<hr />
+<h2 id="glossary">16. Glossary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAPA</td>
+<td>Corrective and Preventive Action</td>
+</tr>
+<tr>
+<td>ISMS</td>
+<td>Information Security Management System</td>
+</tr>
+<tr>
+<td>BCMS</td>
+<td>Business Continuity Management System</td>
+</tr>
+<tr>
+<td>NCR</td>
+<td>Non-Conformance Report</td>
+</tr>
+<tr>
+<td>POPIA</td>
+<td>Protection of Personal Information Act (South Africa)</td>
+</tr>
+<tr>
+<td>NARSA</td>
+<td>National Archives and Records Service of South Africa</td>
+</tr>
+<tr>
+<td>SHEQ</td>
+<td>Safety, Health, Environment, and Quality</td>
+</tr>
+<tr>
+<td>Tenant</td>
+<td>An isolated organisation workspace in Maemo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="disclaimer">17. Disclaimer</h2>
+<p>This document describes Maemo Compliance as implemented and planned
+at the time of publication. Features marked as planned or in progress
+are not contractual commitments unless captured in a signed statement of
+work or licence agreement. Codist (Pty) Ltd reserves the right to modify
+product capabilities as part of normal development.</p>
+<p>For a standards-specific mapping, refer to the companion document:
+<strong>Maemo Compliance — ISO 27001 &amp; ISO 22301 Support
+Guide</strong>.</p>
+<hr />
+<p><strong>Codist (Pty) Ltd</strong><br />
+Product: Maemo Compliance<br />
+Web: https://maemo-compliance.co.za<br />
+Email: technical@codist.co.za</p>
+<p><em>End of document</em></p>
+</body>
+</html>
